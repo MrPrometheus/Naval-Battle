@@ -4,6 +4,7 @@ import GenerationMapShips from "../utils/GeneratonMapShips";
 import PlayingFieldStateType from "../Types/PlayingFieldStateType";
 import PutShipOnField from "../utils/PutShipOnField"
 import FieldSquareType from "../Types/FieldSquareType";
+import RectangleContainsPoint from "../utils/RectangleContainsPoint";
 
 
 class PlayingField extends React.Component<any, PlayingFieldStateType>{
@@ -45,7 +46,12 @@ class PlayingField extends React.Component<any, PlayingFieldStateType>{
         if(this.state.field[y][x].shoted){
             return;
         }
+        if(this.state.gameOver){
+            console.log("You Won!!!")
+            return;
+        }
 
+        let gameOver = false;
         const field = [...this.state.field];
         field[y][x].shoted = true;
         field[y][x].isShipVisible = true;
@@ -54,12 +60,38 @@ class PlayingField extends React.Component<any, PlayingFieldStateType>{
         if(field[y][x].containsShip && field[y][x].shoted){
             const hittedShip = ships.find(ship => (ship.id === field[y][x].shipId));
             hittedShip!.hit();
+            if(hittedShip!.hp! <= 0){
+                const x0 = hittedShip!.startPoint.x - 1
+                const y0 = hittedShip!.startPoint.y - 1
+                let x1 = x0;
+                let y1 = y0;
+                if(hittedShip!.direction === "right"){
+                    x1 += hittedShip!.size! + 1
+                    y1 += 2
+                } else{
+                    x1 += 2
+                    y1 += hittedShip!.size! + 1
+                }
+                for(let y = 0; y < 10; y++){
+                    for(let x = 0; x < 10; x++){
+                        if(RectangleContainsPoint(x0, y0, x1, y1, x, y)){
+                            field[y][x].shoted = true;
+                            field[y][x].isShipVisible = true;
+                        }
+                    }
+                }
+            }
+        }
+
+        if(ships.every(ship => (ship.hp! <= 0))){
+            gameOver = true;
         }
 
         this.setState(state => {
             return{
                 field: field,
                 ships: ships,
+                gameOver: gameOver,
             }
         })
     }
@@ -67,7 +99,7 @@ class PlayingField extends React.Component<any, PlayingFieldStateType>{
     render() {
         return (
             <div>
-                <div className="status">{this.state.status}</div>
+                <h4 className="status">{this.state.status}</h4>
                 {this.state.field.map((row: Array<FieldSquareType>, index: number) => {
                     return(
                         <FieldRow

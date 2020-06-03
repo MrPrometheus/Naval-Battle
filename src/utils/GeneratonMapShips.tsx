@@ -1,4 +1,5 @@
 import {Ship} from "./Ship";
+import RectangleContainsPoint from "./RectangleContainsPoint";
 
 function getRandomInt(min: number, max: number): number {
     min = Math.ceil(min);
@@ -88,14 +89,15 @@ for(let i = 0; i < 10; i++){
                 }
                 for(let y = 0; y < 10; y++){
                     for(let x = 0; x < 10; x++){
-                        if( ((x + 1) >= needX - 1) &&
-                            ((x + 1) <= x1 + 1) &&
-                            ((y + 1) >= needY - 1) &&
-                            ((y + 1) <= y1 + 1)){
+                        if(RectangleContainsPoint(needX - 1, needY - 1, x1 + 1, y1 + 1, x, y)){
                             grid[y][x] = 1
                         }
                     }
                 }
+                console.log("Start X: " + needX)
+                console.log("Start Y: " + needY)
+                console.log("End X: " + x1)
+                console.log("End Y: " + y1)
                 for(let i = 0; i < 10; i++){
                     console.log(grid[i])
                 }

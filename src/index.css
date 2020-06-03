@@ -23,7 +23,8 @@ ol, ul{
 }
 
 .status{
-  margin-bottom: 10px;
+  margin-bottom: 44px;
+  text-align: center;
 }
 
 .square{
@@ -39,7 +40,21 @@ ol, ul{
   padding: 0;
   text-align: center;
   width: 34px;
+  position: relative;
 }
+
+.square span.leftNumbersLine {
+  position: absolute;
+  top: -2px;
+  left: -2rem;
+}
+
+.square span.topNumbersLine {
+  position: absolute;
+  top: -2.4rem;
+  left: 8px;
+}
+
 .square:focus{
   outline: none;
 }
