@@ -87,8 +87,8 @@ class PlayingField extends React.Component<any, PlayingFieldStateType>{
             gameOver = true;
         }
 
-        this.setState(state => {
-            return{
+        this.setState(() => {
+            return {
                 field: field,
                 ships: ships,
                 gameOver: gameOver,
@@ -105,12 +105,11 @@ class PlayingField extends React.Component<any, PlayingFieldStateType>{
                         <FieldRow
                             key={index}
                             row={row}
-                            onClick={(x: number, y: number) => this.handleClick(x, y)}
-                        ></FieldRow>
+                            onClick={(x: number, y: number) => this.handleClick(x, y)} />
                     )
                 })}
             </div>
-        );
+        )
     }
 }
 

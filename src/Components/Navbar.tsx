@@ -1,6 +1,6 @@
 import React from "react";
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
     return (
         <nav>
             <div className="nav-wrapper px3">

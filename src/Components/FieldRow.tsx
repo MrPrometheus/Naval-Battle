@@ -2,7 +2,7 @@ import React from "react";
 import Square from "./Square";
 import FieldSquareType from "../Types/FieldSquareType";
 
-function FieldRow(props: any) {
+const FieldRow = (props: any) => {
     return(
         <div className="board-row">
             {props.row.map((square: FieldSquareType, index: number) => {
@@ -15,7 +15,7 @@ function FieldRow(props: any) {
                         shoted={square.shoted}
                         isShipVisible={square.isShipVisible}
                         onClick={() => props.onClick(square.x, square.y)}
-                    ></Square>
+                    />
                 )
             })}
         </div>
