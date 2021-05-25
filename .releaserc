@@ -6,7 +6,6 @@
       "@semantic-release/release-notes-generator",
       "@semantic-release/changelog",
       "@semantic-release/github",
-      "@semantic-release/npm",
       "@semantic-release/git"],
   "release": {
     "prepare": [
@@ -19,7 +18,7 @@
             "package-lock.json",
             "CHANGELOG.md"
         ],
-        "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
     ]
   }
