@@ -7,7 +7,6 @@ const Square = (props: any) => {
     if(props.containsShip){
         mark = props.shoted ? "X" :  ""
         console.log('test')
-        console.log('test')
     } else{
         mark = props.shoted ? "·" :  ""
     }
