@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/MrPrometheus/Naval-Battle/compare/v1.1.0...v1.2.0) (2021-05-25)
+
+
+### Features
+
+* 1 ([c0f51dc](https://github.com/MrPrometheus/Naval-Battle/commit/c0f51dc66192dca2f73a45870c25ba8d0faacab8))
+* 2 ([acbb1a2](https://github.com/MrPrometheus/Naval-Battle/commit/acbb1a22f20792d3498d3fac4f68571cc153a797))
+
 # [1.1.0](https://github.com/MrPrometheus/Naval-Battle/compare/v1.0.1...v1.1.0) (2021-05-25)
 
 
