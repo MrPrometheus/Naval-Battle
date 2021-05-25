@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/MrPrometheus/Naval-Battle/compare/v1.2.0...v1.2.1) (2021-05-25)
+
+
+### Bug Fixes
+
+* изменение версии package.json ([2725ef8](https://github.com/MrPrometheus/Naval-Battle/commit/2725ef8771befd7b1bc90cb7599137914c7bbc7f))
+
 # [1.2.0](https://github.com/MrPrometheus/Naval-Battle/compare/v1.1.0...v1.2.0) (2021-05-25)
 
 
