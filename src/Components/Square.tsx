@@ -8,6 +8,8 @@ const Square = (props: any) => {
         mark = props.shoted ? "X" :  ""
         console.log('test')
         console.log('test')
+        console.log('test')
+        console.log('test')
     } else{
         mark = props.shoted ? "·" :  ""
     }
